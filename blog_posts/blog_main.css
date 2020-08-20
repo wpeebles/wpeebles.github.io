@@ -1,0 +1,23 @@
+.z_slider{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.z_slider > input{
+}
+
+.z_slider > h1{
+}
+
+.z_slider > p{
+    font-size: 100px;
+}
+
+.z_slider > .emoji{
+    font-size: 100px;
+}
+
+.emoji{
+
+}

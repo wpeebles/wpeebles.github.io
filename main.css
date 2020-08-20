@@ -1,14 +1,17 @@
+/* Thanks to https://coolbackgrounds.io/ and https://cssgradient.io/ for their great CSS resources! */
+
 html {
-    background: #1c1f1f;
+    background-image: url("images/prim.jpg");
     -webkit-font-smoothing: antialiased;
 }
 
 body {
-    background: #fff;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(6px);
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
     color: #545454;
     font-family: "Avenir Next", "Arial", sans-serif;
-    font-size: 16px;
+    font-size: 20px;
     line-height: 1.5;
     margin: 0 auto;
     max-width: 73em;
@@ -21,8 +24,14 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.3;
 }
 
+/* https://thirtyeightvisuals.com/blog/low-highlight-heading-links-squarespace */
 h2 {
     margin-top: 1.3em;
+    display: inline;
+}
+
+h2 > .h2y {
+    background: linear-gradient(180deg, rgba(255,255,255,0) 65%, #fcf0b2 65%);
 }
 
 a {
@@ -53,10 +62,57 @@ img {
     display: inline-block;
 }
 
+video {
+    background: transparent;
+    border: 3px solid rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    max-width: 25%;
+    display: inline-block;
+}
+
 p {
     display: inline-block;
     vertical-align: middle;
 }
+
+/* https://html-online.com/articles/gradient-background-buttons-css-html/ */
+.gradient-button {
+    margin: 10px;
+    font-family: "Arial Black", Gadget, sans-serif;
+    font-size: 20px;
+    padding: 15px;
+    text-align: center;
+    background-size: 200% auto;
+    color: #FFF;
+    width: 220px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    cursor: pointer;
+    border-radius: 25px;
+}
+.gradient-button:hover{
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    margin: 8px 10px 12px;
+}
+
+.disentangle-button {
+    color: #222222;
+    background-image: linear-gradient(to right, #1f78ff 0%, #77efff 51%, #da98ff 100%);
+    vertical-align:middle;
+}
+.disentangle-button:hover {
+    background-position: right center;
+}
+
+.hessian-button {
+    background-image: linear-gradient(to right, #ff7ddd 0%, #ff4545 51%, #ff763a 100%);
+    horiz-align:right;
+    vertical-align:middle;
+}
+.hessian-button:hover {
+    background-position: right center;
+}
+
 
 .paper{
 }
@@ -67,7 +123,72 @@ p {
     margin-right:1em;
 }
 
+.paper > video{
+    text-align:left;
+    vertical-align:middle;
+    margin-right:1em;
+}
+
 .paper > span{
     vertical-align:middle;
     display:inline-block
+}
+
+.me{
+    max-width: 75%;
+}
+
+.pxb{
+    margin: 10px;
+    text-align: center;
+    background-size: 200% auto;
+    width: 200px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    display: inline-block;
+    border-radius: 25px;
+    horiz-align:right;
+    vertical-align:middle;
+    background: url("images/seaedge.png");
+}
+
+.pxb:hover{/*
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    margin: 8px 10px 12px;*/
+}
+
+.pxb > h1{
+    font-family: changeling-neo, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 45px;
+    margin-top:-7.0%;
+}
+
+.pxb > p{
+    color: #2a2a2a;
+    font-size: 24px;
+    text-align: left;
+    margin-bottom: 9%;
+}
+
+
+.row {
+    display: flex;
+}
+
+.column-left {
+    width: 28%;
+}
+
+.column-right {
+    padding: 2%;
+    width: 72%;
+}
+
+hr {
+    border:none;
+    width: 100%;
+    height: 50px;
+    box-shadow: 0 20px 20px -20px #333;
 }

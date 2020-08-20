@@ -1,0 +1,6 @@
+@inproceedings{peebles2020hessian,
+  title={The Hessian Penalty: A Weak Prior for Unsupervised Disentanglement},
+  author={Peebles, William and Peebles, John and Zhu, Jun-Yan and Efros, Alexei A. and Torralba, Antonio},
+  booktitle={ECCV},
+  year={2020}
+}

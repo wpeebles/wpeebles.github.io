@@ -1,0 +1,364 @@
+
+<script src="https://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">google.load("jquery", "1.3.2");</script>
+
+<style type="text/css">
+    body {
+        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-weight:300;
+        font-size:18px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 1100px;
+    }
+    h1 {
+        font-weight:300;
+    }
+
+    .disclaimerbox {
+        background-color: #eee;
+        border: 1px solid #eeeeee;
+        border-radius: 10px ;
+        -moz-border-radius: 10px ;
+        -webkit-border-radius: 10px ;
+        padding: 20px;
+    }
+
+    video.header-vid {
+        height: 140px;
+        border: 1px solid black;
+        border-radius: 10px ;
+        -moz-border-radius: 10px ;
+        -webkit-border-radius: 10px ;
+    }
+
+    img.header-img {
+        height: 140px;
+        border: 1px solid black;
+        border-radius: 10px ;
+        -moz-border-radius: 10px ;
+        -webkit-border-radius: 10px ;
+    }
+
+    img.rounded {
+        border: 0px solid #eeeeee;
+        border-radius: 10px ;
+        -moz-border-radius: 10px ;
+        -webkit-border-radius: 10px ;
+    }
+
+    a:link,a:visited
+    {
+        color: #1367a7;
+        text-decoration: none;
+    }
+    a:hover {
+        color: #208799;
+    }
+
+    td.dl-link {
+        height: 160px;
+        text-align: center;
+        font-size: 22px;
+    }
+
+    .res_wrapper{
+        text-align: center;
+        float: left;
+        margin-left: 3px;
+    }
+
+    .layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+        box-shadow:
+                0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+                5px 5px 0 0px #fff, /* The second layer */
+                5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+                10px 10px 0 0px #fff, /* The third layer */
+                10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
+                15px 15px 0 0px #fff, /* The fourth layer */
+                15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
+                20px 20px 0 0px #fff, /* The fifth layer */
+                20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
+                25px 25px 0 0px #fff, /* The fifth layer */
+                25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
+        margin-left: 10px;
+        margin-right: 45px;
+    }
+
+    .paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+        box-shadow:
+                0px 0px 1px 1px rgba(0,0,0,0.35); /* The top layer shadow */
+
+        margin-left: 10px;
+        margin-right: 45px;
+    }
+
+    .layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+        box-shadow:
+                0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+                5px 5px 0 0px #fff, /* The second layer */
+                5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+                10px 10px 0 0px #fff, /* The third layer */
+                10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
+        margin-top: 5px;
+        margin-left: 10px;
+        margin-right: 30px;
+        margin-bottom: 5px;
+    }
+
+    .vert-cent {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    hr
+    {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    }
+</style>
+
+<html>
+<head>
+    <title>The Hessian Penalty: A Weak Prior for Unsupervised Disentanglement</title>
+    <meta property="og:image" content="" />
+    <meta property="og:title" content="The Hessian Penalty: A Weak Prior for Unsupervised Disentanglement. In ECCV, 2020 (Spotlight)." />
+</head>
+
+<body>
+<br>
+<center>
+    <span style="font-size:38px">The Hessian Penalty:<br> A Weak Prior for Unsupervised Disentanglement</span><br>
+    <table align=center width=1100px>
+        <tr>
+            <td align=center width=275px>
+                <span style="font-size:24px"><a href="http://wpeebles.com/">William Peebles</a></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span style="font-size:24px"><a href="http://johnpeebles.com">John Peebles</a></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span style="font-size:24px"><a href="http://people.csail.mit.edu/junyanz/">Jun-Yan Zhu</a></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span style="font-size:24px"><a href="http://www.eecs.berkeley.edu/~efros/">Alexei Efros</a></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span style="font-size:24px"><a href="http://web.mit.edu/torralba/www/">Antonio Torralba</a></span>
+            </td>
+        </tr>
+    </table>
+    <table align=center width=700px>
+        <tr>
+            <td align=center width=10px>
+                <center>
+                    <span style="font-size:20px"></span>
+                </center>
+            </td>
+            <td align=center width=225px>
+                <center>
+                    <span style="font-size:24px">UC Berkeley</span>
+                </center>
+            </td>
+            <td align=center width=225px>
+                <center>
+                    <span style="font-size:24px">Yale</span>
+                </center>
+            </td>
+            <td align=center width=225px>
+                <center>
+                    <span style="font-size:24px">Adobe Research</span>
+                </center>
+            </td>
+            <td align=center width=225px>
+                <center>
+                    <span style="font-size:24px">MIT CSAIL</span>
+                </center>
+            </td>
+            <td align=center width=10px>
+                <center>
+                    <span style="font-size:24px"></span>
+                </center>
+            </td>
+        </tr>
+    </table>
+
+    <span style="font-size:24px"> [<a href="FIXME">paper</a> | <a href="https://github.com/wpeebles/hessian_penalty">code</a> | download video (<a href="http://efrosgans.eecs.berkeley.edu/CUT/CUT_1minutes.mp4">90 sec</a>, <a href="http://efrosgans.eecs.berkeley.edu/CUT/CUT_10minute.mp4">10 min</a>)]</span><br>
+    <span style="font-size:24px"> ECCV 2020 (Spotlight) </span>
+
+
+</center>
+
+<br>
+
+<table align=center width=1100px>
+    <tr>
+        <td width=400px>
+            <center>
+                <video controls autoplay loop muted class="rounded" src = "images/hessian.mp4" width="800px"></video>
+                <br>
+            </center>
+        </td>
+    </tr>
+</table>
+
+<hr>
+
+<table align=center width=900px>
+    <center><h1>Abstract</h1></center>
+    <tr>
+        Existing disentanglement methods for deep generative models rely on hand-picked priors and complex encoder-based architectures. In this paper, we propose the <i>Hessian Penalty</i>, a simple regularization term that encourages the Hessian of a generative model with respect to its input to be diagonal. We introduce a model-agnostic, unbiased stochastic approximation of this term based on Hutchinson's estimator to compute it efficiently during training. Our method can be applied to a wide range of deep generators with just a few lines of code. We show that training with the Hessian Penalty often causes axis-aligned disentanglement to emerge in latent space when applied to ProGAN on several datasets. Additionally, we use our regularization term to identify interpretable directions in BigGAN's latent space in an unsupervised fashion. Finally, we provide empirical evidence that the Hessian Penalty encourages substantial shrinkage when applied to over-parameterized latent spaces.
+        <br>
+    </tr>
+    <br>
+    <hr>
+
+    <center><h1>Video (90 sec)</h1></center>
+    <table align="center" width="700px">
+        <tbody>
+        <tr><center><a href="http://efrosgans.eecs.berkeley.edu/CUT/CUT_1minutes.mp4">Download video</a></center></tr>
+        <tr>
+            <td align="center" width="700px">
+                <center>
+                    <iframe width="700" height="394" src="https://www.youtube.com/embed/jPl-0EN6S1w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </center>
+            </td>
+        </tr></tbody></table>
+
+    <hr>
+
+    <center><h1>Video (10 min)</h1></center>
+    <table align="center" width="700px">
+        <tbody>
+        <tr><center><a href="http://efrosgans.eecs.berkeley.edu/CUT/CUT_10minute.mp4">Download video</a></center></tr>
+        <tr>
+            <td align="center" width="700px">
+                <center>
+                    <iframe width="700" height="394" src="https://www.youtube.com/embed/uZyIcTkSSXA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </center>
+            </td>
+        </tr></tbody></table>
+    <hr>
+
+    <center><h1>Exhaustive Results</h1></center>
+    <p>
+        Below, we show <i>all</i> z components learned by (1) ProGAN fine-tuned with the Hessian Penalty, (2) ProGAN trained from scratch with the Hessian Penalty, (3) ProGAN trained with InfoGAN loss and (4) vanilla ProGAN. Each row corresponds to varying a single z component from -2 to +2, leaving the remaining ones fixed. Different columns in the same row re-sample the fixed z components. All models were trained with 12-dimensional latent z vectors---with the exception of CLEVR-U which used |z|=3---hence why there are 12 rows. These results are <b>not</b> cherry-picked.
+    </p>
+    <table align=center width=800px>
+        <tr>
+            <td>
+                <h1 align=center>Edges+Shoes</h1>
+                <div class="res_wrapper"><video controls autoplay loop muted class="rounded" src="images/hessian_visuals/edgeshoes/e2s_ft_025656/seed_0/z000_to_z012.mp4"  style="width:195px"></video><p>Hessian Penalty<br>(Fine-Tuned)</p></div>
+                <div class="res_wrapper"><video controls autoplay loop muted class="rounded" src="images/hessian_visuals/edgeshoes/e2s_fs_025656/seed_0/z000_to_z012.mp4"  style="width:195px"></video><p>Hessian Penalty</p></div>
+                <div class="res_wrapper"><video controls autoplay loop muted class="rounded" src="images/hessian_visuals/edgeshoes/e2s_info_025355/seed_0/z000_to_z012.mp4"  style="width:195px"></video><p>InfoGAN</p></div>
+                <div class="res_wrapper"><video controls autoplay loop muted class="rounded" src="images/hessian_visuals/edgeshoes/e2s_bl_024149_wandb_ver/seed_0/z000_to_z012.mp4"  style="width:195px"></video><p>Vanilla</p></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h1 align=center>CLEVR-Simple</h1>
+                <div class="res_wrapper"><video controls autoplay loop muted class="rounded" src="images/hessian_visuals/clevr_simple/simple_ft_033795/seed_0/z000_to_z012.mp4"  style="width:195px"></video><p>Hessian Penalty<br>(Fine-Tuned)</p></div>
+                <div class="res_wrapper"><video controls autoplay loop muted class="rounded" src="images/hessian_visuals/clevr_simple/simple_fs_033192/seed_0/z000_to_z012.mp4"  style="width:195px"></video><p>Hessian Penalty</p></div>
+                <div class="res_wrapper"><video controls autoplay loop muted class="rounded" src="images/hessian_visuals/clevr_simple/simple_info_032589/seed_0/z000_to_z012.mp4"  style="width:195px"></video><p>InfoGAN</p></div>
+                <div class="res_wrapper"><video controls autoplay loop muted class="rounded" src="images/hessian_visuals/clevr_simple/simple_bl_031685/seed_0/z000_to_z012.mp4"  style="width:195px"></video><p>Vanilla</p></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h1 align=center>CLEVR-1FOV</h1>
+                <div class="res_wrapper"><video controls autoplay loop muted class="rounded" src="images/hessian_visuals/clevr_1fov/1fov_ft/seed_0/z000_to_z012.mp4"  style="width:195px"></video><p>Hessian Penalty<br>(Fine-Tuned)</p></div>
+                <div class="res_wrapper"><video controls autoplay loop muted class="rounded" src="images/hessian_visuals/clevr_1fov/1fov_fs/seed_0/z000_to_z012.mp4"  style="width:195px"></video><p>Hessian Penalty</p></div>
+                <div class="res_wrapper"><video controls autoplay loop muted class="rounded" src="images/hessian_visuals/clevr_1fov/1fov_info/seed_0/z000_to_z012.mp4"  style="width:195px"></video><p>InfoGAN</p></div>
+                <div class="res_wrapper"><video controls autoplay loop muted class="rounded" src="images/hessian_visuals/clevr_1fov/1fov_bl_BEST/seed_0/z000_to_z012.mp4"  style="width:195px"></video><p>Vanilla</p></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h1 align=center>CLEVR-U</h1>
+                <div class="res_wrapper"><video controls autoplay loop muted class="rounded" src="images/hessian_visuals/clevr_u/underparam_ft_034966/seed_0/z000_to_z003.mp4"  style="width:195px"></video><p>Hessian Penalty<br>(Fine-Tuned)</p></div>
+                <div class="res_wrapper"><video controls autoplay loop muted class="rounded" src="images/hessian_visuals/clevr_u/underparam_fs_036507/seed_0/z000_to_z003.mp4"  style="width:195px"></video><p>Hessian Penalty</p></div>
+                <div class="res_wrapper"><video controls autoplay loop muted class="rounded" src="images/hessian_visuals/clevr_u/underparam_info_030781/seed_0/z000_to_z003.mp4"  style="width:195px"></video><p>InfoGAN</p></div>
+                <div class="res_wrapper"><video controls autoplay loop muted class="rounded" src="images/hessian_visuals/clevr_u/underparam_bl/seed_0/z000_to_z003.mp4"  style="width:195px"></video><p>Vanilla</p></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h1 align=center>CLEVR-Complex</h1>
+                <div class="res_wrapper"><video controls autoplay loop muted class="rounded" src="images/hessian_visuals/clevr_complex/two_obj_ft/seed_0/z000_to_z012.mp4"  style="width:195px"></video><p>Hessian Penalty<br>(Fine-Tuned)</p></div>
+                <div class="res_wrapper"><video controls autoplay loop muted class="rounded" src="images/hessian_visuals/clevr_complex/two_obj_fs_036206/seed_0/z000_to_z012.mp4"  style="width:195px"></video><p>Hessian Penalty</p></div>
+                <div class="res_wrapper"><video controls autoplay loop muted class="rounded" src="images/hessian_visuals/clevr_complex/two_obj_info_016010/seed_0/z000_to_z012.mp4"  style="width:195px"></video><p>InfoGAN</p></div>
+                <div class="res_wrapper"><video controls autoplay loop muted class="rounded" src="images/hessian_visuals/clevr_complex/two_obj_bl_013297/seed_0/z000_to_z012.mp4"  style="width:195px"></video><p>Vanilla</p></div>
+            </td>
+        </tr>
+
+    </table>
+
+    <hr>
+
+    <center><h1>Try our code</h1></center>
+
+    <table align=center width=900px>
+        <tr>
+            <td align=center width=900px>
+                <center>
+            <td><img class="round" style="width:900px" src="images/hessian_code.png"/></td>
+            </center>
+            </td>
+        </tr>
+    </table>
+
+    <table align=center width=800px>
+        <tr><center>
+				<span style="font-size:28px"> <a href='https://github.com/wpeebles/hessian_penalty'> [GitHub] </a>
+			  <br>
+        </center></tr>
+        <!-- <tr><center> -->
+        <!-- <span style="font-size:28px"><a>&nbsp;Model: [Prototxt] Weights: [Unrescaled] [Rescaled]</a></span> -->
+        <!-- </center></tr> -->
+    </table>
+
+    <br>
+    <hr>
+
+    <table align=center width=475 px>
+        <center><h1>Paper</h1></center>
+        <tr>
+            <td><a href="https://arxiv.org/abs/2007.15651"><img class="layered-paper-big" style="height:175px" src="images/hessian_first_page.png"/></a></td>
+            <td><span style="font-size:12pt">W. Peebles, J. Peebles, J.Y. Zhu, A. Efros, A. Torralba</span><br>
+                <span style="font-size:12pt"><b>The Hessian Penalty: A Weak Prior for Unsupervised Disentanglement.</b></span><br>
+                <span style="font-size:12pt">In <a href="FIXME">ECCV</a>, 2020 (Spotlight).</span>
+            </td>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <table align=center width=600px>
+        <tr>
+            <td><span style="font-size:14pt"><center>
+				  	<a href="images/hessian_bibitex.txt">[Bibtex]</a>
+  	              </center></td>
+        </tr>
+    </table>
+    <br>
+    <hr>
+
+    <table align=center width=1100px>
+        <tr>
+            <td width=400px>
+                <left>
+                    <center><h1>Acknowledgements</h1></center>
+                    We thank Pieter Abbeel, Taesung Park, Richard Zhang, Mathieu Aubry, Ilija Radosavovic, Tim Brooks, Karttikeya Mangalam and all of BAIR for valuable discussions and encouragement. This work was supported, in part, by grants from SAP, Adobe and Berkeley DeepDrive. We further thank Taesung Park for his project page template.
+                </left>
+            </td>
+        </tr>
+    </table>
+
+    <br><br>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-75897335-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-75897335-2');
+    </script>
+
+
+</body>
+</html>

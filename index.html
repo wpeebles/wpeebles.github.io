@@ -1,4 +1,3 @@
-<!--HTML and CSS source modified from Bracket's starter code-->
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,18 +5,73 @@
         <title>William Peebles</title>
         <meta name="description" content="Project Page">
         <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="https://use.typekit.net/oml3bsz.css">
     </head>
     <body>
         <h1>
             William (Bill) Peebles
-        </h1>
-        <img src="images/me.png" alt="William Peebles">
-        <br>email: peebles [at] berkeley [dot] edu
-        <p>I am a PhD student at Berkeley AI Research. Previously, I received my Bachelor of Science from MIT where I worked with <a href="https://web.mit.edu/torralba/www/">Antonio Torralba</a>. My research currently focuses on deep generative models for images and videos.</p>
-        <h2>Recent Publications</h2>
-        <p class="paper"><img src="images/iccv2019.png" alt="GAN reconstructions of images versus the original images."><span><b>Seeing What a GAN Cannot Generate</b><br>David Bau, Jun-Yan Zhu, Jonas Wulff, William Peebles, Hendrik Strobelt, Bolei Zhou, Antonio Torralba<br>ICCV 2019 (Oral)<br><a href="http://gandissect.csail.mit.edu/papers/Seeing_What_a_GAN_Cannot_Generate.pdf">draft</a> (final paper coming soon)
-        
-        <p class="paper"><img src="images/sig2019.png" alt="A natural image of a building is modified by adding trees and domes."><span><b>Semantic Photo Manipulation with a Generative Image Prior</b><br>David Bau, Hendrik Strobelt, William Peebles, Jonas Wulff, Bolei Zhou, Jun-Yan Zhu, Antonio Torralba<br>SIGGRAPH 2019<br><a href="http://ganpaint.io/demo/?project=church">demo</a> &#183; <a href="http://ganpaint.io/Bau_et_al_Semantic_Photo_Manipulation_preprint.pdf">paper</a> &#183; <a href="http://ganpaint.io/">overview</a></span></p>
-        
+        </h1><br>
+        <div class="row">
+            <div class="column-left">
+                <img class="me" src="images/me.png" alt="William Peebles"><br>
+                email: peebles [at] berkeley [dot] edu
+            </div>
+            <!--<div class="column-right pxb">
+                <h1>THE PIXEL BENDING BLOG</h1>
+                <p>Welcome to the Pixel Bending mini-blog! Here, I'll talk about various topics related to synthesizing images,
+                    building deep generative models and more. Click the links below to access the posts:</p>
+                <a class="disentangle-button gradient-button" href="blog_posts/disentanglement.html">1. THE MAGIC OF DISENTANGLEMENT</>
+                <a class="hessian-button gradient-button">2. THE HESSIAN PENALTY</a>
+            </div>-->
+            <div class="column-right pxb">
+                <h1>RESEARCH UPDATES</h1>
+                <p>Check out our recent work on unsupervised disentanglement in deep generative models.</p><br>
+                <a class="disentangle-button gradient-button" href="hessian-penalty.html">THE HESSIAN PENALTY</a>
+            </div>
+        </div>
+        <br>
+        <h2 style="background: linear-gradient(180deg, rgba(255,255,255,0) 65%, #ff8888 65%);">About Me</h2><br>
+
+        I'm a second-year PhD student at UC Berkeley advised by <a href="https://people.eecs.berkeley.edu/~efros/">Alyosha Efros</a>.
+        Previously, I did my undergrad at MIT where I worked with
+        <a href="https://web.mit.edu/torralba/www/">Antonio Torralba</a>. My research currently focuses on unsupervised learning,
+        with an emphasis on deep generative models for images and videos.</p><br><br>
+
+        <h2 style="background: linear-gradient(180deg, rgba(255,255,255,0) 65%, #fffe8c 65%);">News</h2><br>
+
+        <!--<b>[July 2020]</b> I started a blog! It's called Pixel Bending, and I'll be discussing various things related to generative models.
+        The first two-part series is on disentanglement.<br>-->
+        <b>[May 2020]</b> I'm interning at Adobe Research for the summer.<br><br>
+
+        <h2 style="background: linear-gradient(180deg, rgba(255,255,255,0) 65%, #93fc93 65%);">Publications</h2><br>
+
+
+        <p class="paper"><video controls loop autoplay muted>
+            <source src="images/hessian.mp4" type="video/mp4">
+        </video>
+            <span><b>The Hessian Penalty: A Weak Prior for Unsupervised Disentanglement</b>
+        <br>William Peebles, John Peebles, Jun-Yan Zhu, Alexei Efros, Antonio Torralba
+        <br>ECCV 2020 (Spotlight)
+                <br> <a href="https://youtu.be/uZyIcTkSSXA">video</a> &#183; <a href="https://youtu.be/jPl-0EN6S1w">overview in 90 seconds</a> &#183; <a href="hessian-penalty.html">project page</a> &#183; paper &#183; <a href="https://github.com/wpeebles/hessian_penalty">github</a>
+
+        <p class="paper"><img src="images/iccv2019.png"
+                              alt="GAN reconstructions of images versus the original images.">
+            <span><b>Seeing What a GAN Cannot Generate</b>
+        <br>David Bau, Jun-Yan Zhu, Jonas Wulff, William Peebles, Hendrik Strobelt, Bolei Zhou, Antonio Torralba
+        <br>ICCV 2019 (Oral)
+        <br><a href="http://gannotsee.net/">demo</a> &#183;
+        <a href="https://arxiv.org/pdf/1910.11626.pdf">paper</a> &#183;
+        <a href="http://ganseeing.csail.mit.edu/">overview</a> &#183;
+        <a href="https://github.com/davidbau/ganseeing">github</a>
+
+
+        <p class="paper"><img src="images/sig2019.png"
+                              alt="A natural image of a building is modified by adding trees and domes.">
+            <span><b>Semantic Photo Manipulation with a Generative Image Prior</b>
+        <br>David Bau, Hendrik Strobelt, William Peebles, Jonas Wulff, Bolei Zhou, Jun-Yan Zhu, Antonio Torralba
+        <br>SIGGRAPH 2019<br><a href="http://ganpaint.io/demo/?project=church">demo</a> &#183;
+        <a href="http://ganpaint.io/Bau_et_al_Semantic_Photo_Manipulation_preprint.pdf">paper</a> &#183;
+        <a href="http://ganpaint.io/">overview</a></span></p>
+
     </body>
 </html>

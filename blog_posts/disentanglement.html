@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>The Magic of Disentanglement</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../main.css">
+    <link rel="stylesheet" href="blog_main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="jQuery-Knob/dist/jquery.knob.min.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+Welcome to the very first blog post on Pixel Bending! In this post, we'll begin our series on disentanglement, a
+somewhat nebulous but extremely exciting and active research topic in machine learning. This first post will present
+an intuitive (and interactive!) overview of disentanglement; it should be a fairly gentle introduction. Part two of the
+series covers the Hessian Penalty, our new algorithm for tackling disentangling. Let's dive right in!
+
+<h1>What does disentanglement even mean?</h1>
+
+<div class="z_slider">
+    <p>\(G(\)</p>
+    <input value="0" data-thickness=.4 class="dial" data-fgColor="#5487ff" data-angleOffset=-125 data-angleArc=250 data-rotation=anticlockwise>
+    <p>\(,\)</p>
+    <input value="0" data-thickness=.4 class="dial" data-fgColor="#5487ff" data-angleOffset=-125 data-angleArc=250 data-rotation=anticlockwise>
+    <p>\() =\) </p><div class="emoji">🔥❄️</div>
+</div>
+
+<p>In what may initially seem like a complete digression from discussing disentanglement (and pixels), we're going to talk about shower handles.
+If you're like me, most showers you've used had just a single knob. Turning that knob ever so slightly will
+release some freezing-cold water at a low water pressure. Turn it a bit more and both the temperature and water pressure will increase.
+With this kind of shower knob, it's impossible to take a shower with cold water at a low water pressure or to take a shower
+with hot water at a low water pressure. We can think of this knob as <i>entangling</i> water pressure with temperature; there's no way to "independently" change just one factor without inadvertently changing the other.</p>
+
+<p>
+    Let's try to make this silly (but surprisingly informative!) example a tiny bit more formal. We'll refer to the value
+    our knob is set to as \(z\). For example, \(z = 0\) means the shower is turned off, whereas \(z = 1\) means
+    that we've cranked-up the knob as much as we can. Then, we'll define \(G\) to be a function that takes as input \(z\)
+    and outputs the state of the shower. In our example, that means \(G\) produces two outputs; a number that
+    describes the water pressure of the shower and a second number that describes the temperature of the water. Try
+    setting various various values of \(z\) below (visually represented as a shower knob) to get a sense of what
+    \(G\) is doing:
+</p>
+
+<div id="introduce_notation">$$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$</div>
+
+<h1>Finding a disentangled shower</h1>
+
+The question now turns to how we can incentivize the manufacturer to give us our disentangled knobs.
+You might ask, "Can't we just tell them that we want a shower where one
+knob controls water pressure and a second knob controls temperature?" We actually could do that, but for reasons we'll
+talk about in the next section,
+
+What do we have to tell the manufacturing company to ensure that they deliver
+us a nice "disentangled" shower; one where we can freely control the temperature and pressure factors? Well, since there are only
+two factors, maybe all we need to tell them is that we want a shower with two knobs! But to our dismay, this is the shower they shipped us:
+
+Yikes! We got our shower with two knobs, but the left controls amount of cold water while the right controls amount of hot water.
+This gives us a bit more control than before---now we can have a hot shower with low water pressure---but we can no longer
+have a hot shower at maximum water pressure. What went wrong here? Unfortunately, having a number of knobs equal to the
+number of factors isn't enough to guarantee that we get a disentangled shower.
+
+Time to bring-in some machine learning!
+
+<h1>Manipulating images with disentanglement</h1>
+
+Water pressure and temperature --> variables in our data
+The shower manufacturing company --> a generative model that learns to reproduce the data
+The shower knobs --> the knobs that provide an input to our generative model
+
+At some point while reading this, you may have asked yourself, "Why didn't we just tell the manufacturer that we want one
+knob to control water pressure and one knob to control temperature?" Well, we actually could have done that in this
+specific example since we knew beforehand the only two factors of variation that we care about.
+
+When it works, disentanglement is a little bit magical; it lets your generative model automatically learn
+very useful features and functions that you did not explicitly train them to construct. To give a concrete example, try
+out this demo that transforms human drawings of edges into photorealistic images. The method used to do this is Pix2Pix,
+a supervised learning algorithm that learns to map edges to its ground-truth label (the correspond real image).
+It turns out that when we train a boring old GAN---regularized with a certain disentanglement algorithm---our generator learns
+a z component that does Pix2Pix's job! Increasing the z knob makes the image look more photorealistic (while preserving the structure),
+while decreasing it throws-away texture and leaves only edges! But we got other useful knobs, too, like a knob
+that makes shoes taller when increased; this is something Pix2Pix can't do since we didn't have labels that described
+each shoe's height. In other words, disentanglement automatically gave us multiple Pix2Pix models,
+and we didn't even need to use explicit labels to train them! Another example is the Sentiment Neuron Paper. The tl;dr is that they trained an unsupervised generative network that produces language,
+and their model automatically learned a sub-network that controls the sentiment of the output text. In short, disentanglement
+can remove the need for labels, when it works at least.
+
+<h1>On Disentanglement Algorithms</h1>
+
+The trouble, of course, is that designing useful disentanglement algorithms is challenging, and algorithms that work on
+one dataset or model may not work well on others. Perhaps more fundamentally, the research community hasn't even
+converged upon a formal definition of disentanglement yet! Although I've tried to give an intuitive illustration
+of disentanglement in this post, you may be frustrated that I didn't present a clear objective or evaluation metric.
+I'm a bit frustrated by it, too! Doing research in this area can be tricky, and a lot of it boils down to looking at
+our models and trying to visualize what they have learned, not particularly unlike the shower knob examples from the
+beginning of this post. Despite these roadblocks, there is quite a lot of existing disentanglement literature. I've
+included a very, very small subset of this research below if you're interested in finding out more.
+
+That wraps up the first blog post on Pixel Bending (turns out disentanglement is a great way to "bend" pixels!).
+Click below for part two of our Disentanglement series: The Hessian Penalty. It covers our new, extremely simple
+regularization function for tackling disentanglement in arbitrary neural networks.
+
+
+<script>
+    $(function() {
+        $(".dial").knob();
+    });
+
+</script>
+
+</body>
+</html>
