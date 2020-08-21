@@ -1,4 +1,4 @@
-
+<!--This HTML is based on Taesung Park's project page. Code from w3schools was also used.-->
 <script src="https://www.google.com/jsapi" type="text/javascript"></script>
 <script type="text/javascript">google.load("jquery", "1.3.2");</script>
 
@@ -118,6 +118,41 @@
         height: 1px;
         background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
     }
+
+    .collapsible {
+        background-color: #777;
+        color: white;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 20px;
+    }
+
+    .active, .collapsible:hover {
+        background-color: #555;
+    }
+
+    .collapsible:after {
+        content: '\002B';
+        color: white;
+        font-weight: bold;
+        float: right;
+        margin-left: 5px;
+    }
+
+    .active:after {
+        content: "\2212";
+    }
+
+    .content {
+        display: none;
+        overflow: hidden;
+        background-color: #f1f1f1;
+    }
+
 </style>
 
 <html>
@@ -241,47 +276,62 @@
     <table align=center width=800px>
         <tr>
             <td>
-                <h1 align=center>Edges+Shoes</h1>
-                <div class="res_wrapper"><video controls autoplay loop muted class="rounded" src="images/hessian_visuals/edgeshoes/e2s_ft_025656/seed_0/z000_to_z012.mp4"  style="width:195px"></video><p>Hessian Penalty<br>(Fine-Tuned)</p></div>
+                <button class="collapsible">Edges+Shoes </button>
+                <div class="content">
+                    <h1 align=center>Edges+Shoes</h1>
+                    <div class="res_wrapper"><video controls autoplay loop muted class="rounded" src="images/hessian_visuals/edgeshoes/e2s_ft_025656/seed_0/z000_to_z012.mp4"  style="width:195px"></video><p>Hessian Penalty<br>(Fine-Tuned)</p></div>
                 <div class="res_wrapper"><video controls autoplay loop muted class="rounded" src="images/hessian_visuals/edgeshoes/e2s_fs_025656/seed_0/z000_to_z012.mp4"  style="width:195px"></video><p>Hessian Penalty</p></div>
                 <div class="res_wrapper"><video controls autoplay loop muted class="rounded" src="images/hessian_visuals/edgeshoes/e2s_info_025355/seed_0/z000_to_z012.mp4"  style="width:195px"></video><p>InfoGAN</p></div>
                 <div class="res_wrapper"><video controls autoplay loop muted class="rounded" src="images/hessian_visuals/edgeshoes/e2s_bl_024149_wandb_ver/seed_0/z000_to_z012.mp4"  style="width:195px"></video><p>Vanilla</p></div>
+                </div>
             </td>
         </tr>
         <tr>
             <td>
+                <button class="collapsible">CLEVR-Simple</button>
+                <div class="content">
                 <h1 align=center>CLEVR-Simple</h1>
                 <div class="res_wrapper"><video controls autoplay loop muted class="rounded" src="images/hessian_visuals/clevr_simple/simple_ft_033795/seed_0/z000_to_z012.mp4"  style="width:195px"></video><p>Hessian Penalty<br>(Fine-Tuned)</p></div>
                 <div class="res_wrapper"><video controls autoplay loop muted class="rounded" src="images/hessian_visuals/clevr_simple/simple_fs_033192/seed_0/z000_to_z012.mp4"  style="width:195px"></video><p>Hessian Penalty</p></div>
                 <div class="res_wrapper"><video controls autoplay loop muted class="rounded" src="images/hessian_visuals/clevr_simple/simple_info_032589/seed_0/z000_to_z012.mp4"  style="width:195px"></video><p>InfoGAN</p></div>
                 <div class="res_wrapper"><video controls autoplay loop muted class="rounded" src="images/hessian_visuals/clevr_simple/simple_bl_031685/seed_0/z000_to_z012.mp4"  style="width:195px"></video><p>Vanilla</p></div>
+                </div>
             </td>
         </tr>
         <tr>
             <td>
+                <button class="collapsible">CLEVR-1FOV</button>
+                <div class="content">
                 <h1 align=center>CLEVR-1FOV</h1>
                 <div class="res_wrapper"><video controls autoplay loop muted class="rounded" src="images/hessian_visuals/clevr_1fov/1fov_ft/seed_0/z000_to_z012.mp4"  style="width:195px"></video><p>Hessian Penalty<br>(Fine-Tuned)</p></div>
                 <div class="res_wrapper"><video controls autoplay loop muted class="rounded" src="images/hessian_visuals/clevr_1fov/1fov_fs/seed_0/z000_to_z012.mp4"  style="width:195px"></video><p>Hessian Penalty</p></div>
                 <div class="res_wrapper"><video controls autoplay loop muted class="rounded" src="images/hessian_visuals/clevr_1fov/1fov_info/seed_0/z000_to_z012.mp4"  style="width:195px"></video><p>InfoGAN</p></div>
                 <div class="res_wrapper"><video controls autoplay loop muted class="rounded" src="images/hessian_visuals/clevr_1fov/1fov_bl_BEST/seed_0/z000_to_z012.mp4"  style="width:195px"></video><p>Vanilla</p></div>
+                </div>
             </td>
         </tr>
         <tr>
             <td>
+                <button class="collapsible">CLEVR-U</button>
+                <div class="content">
                 <h1 align=center>CLEVR-U</h1>
                 <div class="res_wrapper"><video controls autoplay loop muted class="rounded" src="images/hessian_visuals/clevr_u/underparam_ft_034966/seed_0/z000_to_z003.mp4"  style="width:195px"></video><p>Hessian Penalty<br>(Fine-Tuned)</p></div>
                 <div class="res_wrapper"><video controls autoplay loop muted class="rounded" src="images/hessian_visuals/clevr_u/underparam_fs_036507/seed_0/z000_to_z003.mp4"  style="width:195px"></video><p>Hessian Penalty</p></div>
                 <div class="res_wrapper"><video controls autoplay loop muted class="rounded" src="images/hessian_visuals/clevr_u/underparam_info_030781/seed_0/z000_to_z003.mp4"  style="width:195px"></video><p>InfoGAN</p></div>
                 <div class="res_wrapper"><video controls autoplay loop muted class="rounded" src="images/hessian_visuals/clevr_u/underparam_bl/seed_0/z000_to_z003.mp4"  style="width:195px"></video><p>Vanilla</p></div>
+                </div>
             </td>
         </tr>
         <tr>
             <td>
+                <button class="collapsible">CLEVR-Complex</button>
+                <div class="content">
                 <h1 align=center>CLEVR-Complex</h1>
                 <div class="res_wrapper"><video controls autoplay loop muted class="rounded" src="images/hessian_visuals/clevr_complex/two_obj_ft/seed_0/z000_to_z012.mp4"  style="width:195px"></video><p>Hessian Penalty<br>(Fine-Tuned)</p></div>
                 <div class="res_wrapper"><video controls autoplay loop muted class="rounded" src="images/hessian_visuals/clevr_complex/two_obj_fs_036206/seed_0/z000_to_z012.mp4"  style="width:195px"></video><p>Hessian Penalty</p></div>
                 <div class="res_wrapper"><video controls autoplay loop muted class="rounded" src="images/hessian_visuals/clevr_complex/two_obj_info_016010/seed_0/z000_to_z012.mp4"  style="width:195px"></video><p>InfoGAN</p></div>
                 <div class="res_wrapper"><video controls autoplay loop muted class="rounded" src="images/hessian_visuals/clevr_complex/two_obj_bl_013297/seed_0/z000_to_z012.mp4"  style="width:195px"></video><p>Vanilla</p></div>
+                </div>
             </td>
         </tr>
 
@@ -331,7 +381,7 @@
         <tr>
             <td><span style="font-size:14pt"><center>
 				  	<a href="images/hessian_bibitex.txt">[Bibtex]</a>
-  	              </center></td>
+            </center></span></td>
         </tr>
     </table>
     <br>
@@ -347,8 +397,10 @@
             </td>
         </tr>
     </table>
+</table>
 
-    <br><br>
+
+<br><br>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-75897335-2"></script>
@@ -360,6 +412,22 @@
         gtag('config', 'UA-75897335-2');
     </script>
 
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    </script>
 
 </body>
 </html>
