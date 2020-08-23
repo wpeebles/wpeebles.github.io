@@ -212,7 +212,7 @@
         </tr>
     </table>
 
-    <span style="font-size:24px"> [<a href="images/hessian_penalty_paper_virtual.pdf">paper</a> | <a href="https://github.com/wpeebles/hessian_penalty">code</a> | <a href="https://youtu.be/jPl-0EN6S1w">90 sec video</a> | <a href="https://youtu.be/uZyIcTkSSXA">10 min video</a>]</span><br>
+    <span style="font-size:24px"> <a href="images/hessian_penalty_paper_virtual.pdf">paper</a> | <a href="https://github.com/wpeebles/hessian_penalty">code</a> | <a href="https://youtu.be/jPl-0EN6S1w">90 sec video</a> | <a href="https://youtu.be/uZyIcTkSSXA">10 min video</a></span><br>
     <span style="font-size:24px"> ECCV 2020 (Spotlight) </span>
 
 
@@ -220,17 +220,16 @@
 
 <br>
 
-<table align=center width=1100px>
+<table align="center" width="700px">
+    <tbody>
+    <tr><center><a href="http://efrosgans.eecs.berkeley.edu/HessianPenalty/hessian_penalty_90sec_talk.mov">Download video</a></center></tr>
     <tr>
-        <td width=400px>
+        <td align="center" width="700px">
             <center>
-                <video controls autoplay loop muted class="rounded" src = "images/hessian.mp4" width="800px"></video>
-                <br>
+                <iframe width="700" height="394" src="https://www.youtube.com/embed/jPl-0EN6S1w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </center>
         </td>
-    </tr>
-</table>
-
+    </tr></tbody></table>
 <hr>
 
 <table align=center width=900px>
@@ -240,20 +239,6 @@
         <br>
     </tr>
     <br>
-    <hr>
-
-    <center><h1>Video (90 sec)</h1></center>
-    <table align="center" width="700px">
-        <tbody>
-        <tr><center><a href="http://efrosgans.eecs.berkeley.edu/HessianPenalty/hessian_penalty_90sec_talk.mov">Download video</a></center></tr>
-        <tr>
-            <td align="center" width="700px">
-                <center>
-                    <iframe width="700" height="394" src="https://www.youtube.com/embed/jPl-0EN6S1w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </center>
-            </td>
-        </tr></tbody></table>
-
     <hr>
 
     <center><h1>Video (10 min)</h1></center>
@@ -339,7 +324,46 @@
 
     <hr>
 
+    <center><h1>BigGAN Direction Discovery Results</h1></center>
+
+    <p>Below, we show several linear z-space directions learned via the Hessian Penalty. These directions are learned in BigGAN trained on ImageNet.</p>
+
+    <table align=center width=900px>
+        <tr>
+            <td align=center width=900px>
+                <center>
+            <td><img class="round" style="width:900px" src="images/dogs_ours.gif"/></td>
+            </center>
+            </td>
+        </tr>
+        <tr>
+            <td align=center width=900px>
+                <center>
+            <td><img class="round" style="width:900px" src="images/church_colorize.gif"/></td>
+            </center>
+            </td>
+        </tr>
+        <tr>
+            <td align=center width=900px>
+                <center>
+            <td><img class="round" style="width:900px" src="images/zoom_ours.gif"/></td>
+            </center>
+            </td>
+        </tr>
+        <tr>
+            <td align=center width=900px>
+                <center>
+            <td><img class="round" style="width:900px" src="images/ours_shift.gif"/></td>
+            </center>
+            </td>
+        </tr>
+    </table>
+
+    <hr>
+
     <center><h1>Try our code</h1></center>
+
+    <p>We released <a href="https://github.com/wpeebles/hessian_penalty/tree/main#adding-the-hessian-penalty-to-your-code">portable implementations of the Hessian Penalty in and TensorFlow</a> for your use in your code bases. They can be used with just one line of code. </p>
 
     <table align=center width=900px>
         <tr>
@@ -354,7 +378,7 @@
     <table align=center width=800px>
         <tr><center>
 				<span style="font-size:28px"> <a href='https://github.com/wpeebles/hessian_penalty'> [GitHub] </a>
-			  <br>
+                    <br></span>
         </center></tr>
         <!-- <tr><center> -->
         <!-- <span style="font-size:28px"><a>&nbsp;Model: [Prototxt] Weights: [Unrescaled] [Rescaled]</a></span> -->
@@ -362,13 +386,12 @@
     </table>
 
     <br>
-    <hr>
-
     <table align=center width=475 px>
+        <hr>
         <center><h1>Paper</h1></center>
         <tr>
             <td><a href="images/hessian_penalty_paper_virtual.pdf"><img class="layered-paper-big" style="height:175px" src="images/hessian_first_page.png"/></a></td>
-            <td><span style="font-size:12pt">W. Peebles, J. Peebles, J.Y. Zhu, A. Efros, A. Torralba</span><br>
+            <td><span style="font-size:12pt">W. Peebles, J. Peebles, J.-Y. Zhu, A. Efros, A. Torralba</span><br>
                 <span style="font-size:12pt"><b>The Hessian Penalty: A Weak Prior for Unsupervised Disentanglement.</b></span><br>
                 <span style="font-size:12pt">In ECCV, 2020 (Spotlight).</span>
                 <span style="font-size:12pt"><a href="images/hessian_penalty_paper_virtual.pdf">PDF</a></span>
