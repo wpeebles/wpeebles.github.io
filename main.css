@@ -104,15 +104,23 @@ p {
     background-position: right center;
 }
 
-.hessian-button {
-    background-image: linear-gradient(to right, #ff7ddd 0%, #ff4545 51%, #ff763a 100%);
+.arxiv-button {
+    background-image: linear-gradient(to right, #a63aff 0%, #ff6e2e 51%, #fff314 100%);
     horiz-align:right;
     vertical-align:middle;
 }
-.hessian-button:hover {
+.arxiv-button:hover {
     background-position: right center;
 }
 
+.github-button {
+    background-image: linear-gradient(to right, #0078ff 0%, #24fd67 51%, #a63aff 100%);
+    horiz-align:right;
+    vertical-align:middle;
+}
+.github-button:hover {
+    background-position: right center;
+}
 
 .paper{
 }
