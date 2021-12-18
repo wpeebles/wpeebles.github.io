@@ -24,6 +24,7 @@ html {
 .gradient-button:hover{
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     margin: 8px 10px 12px;
+    background-position: right center;
 }
 
 .github-button {
@@ -31,18 +32,19 @@ html {
     horiz-align:right;
     vertical-align:middle;
 }
-.arxiv-button:hover {
-    background-position: right center;
-}
 
 .arxiv-button {
     background-image: linear-gradient(to right, #0078ff 0%, #24fd67 51%, #00ffe1 100%);
     horiz-align:right;
     vertical-align:middle;
 }
-.github-button:hover {
-    background-position: right center;
+
+.colab-button {
+    background-image: linear-gradient(to right, #9949e7 0%, #34b8ff 51%, #bbdcff 100%);
+    horiz-align:right;
+    vertical-align:middle;
 }
+
 
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
     display: block
