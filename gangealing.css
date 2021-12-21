@@ -45,6 +45,11 @@ html {
     vertical-align:middle;
 }
 
+.slides-button {
+    background-image: linear-gradient(to right, rgba(252, 32, 94, 0.84) 0%, rgba(255, 5, 5, 0.84) 51%, #ff1c51 100%);
+    horiz-align:right;
+    vertical-align:middle;
+}
 
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
     display: block
