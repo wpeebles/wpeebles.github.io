@@ -777,6 +777,16 @@ textarea.w-input, textarea.w-select {
 .w-hidden-main {
     display: none !important
 }
+/* https://www.webdesignersacademy.com/show-and-hide-different-content-on-mobile-devices-desktops/ */
+#content-desktop {display: block;}
+#content-mobile {display: none;}
+
+@media screen and (max-width: 768px) {
+
+    #content-desktop {display: none;}
+    #content-mobile {display: block;}
+
+}
 
 @media screen and (max-width: 991px) {
     .w-container {
