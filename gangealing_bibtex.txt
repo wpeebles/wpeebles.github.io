@@ -1,6 +1,6 @@
-@article{peebles2022gansupervised,
+@inproceedings{peebles2022gansupervised,
 title={GAN-Supervised Dense Visual Alignment},
 author={William Peebles and Jun-Yan Zhu and Richard Zhang and Antonio Torralba and Alexei Efros and Eli Shechtman},
-year={2022},
-booktitle={CVPR}
+booktitle={CVPR},
+year={2022}
 }
