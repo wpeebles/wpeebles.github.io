@@ -45,8 +45,14 @@ html {
     vertical-align:middle;
 }
 
+.twominpapers-button {
+    background-image: linear-gradient(to right, #404040 0%, #565656 51%, #ff4400 100%);
+    horiz-align:right;
+    vertical-align:middle;
+}
+
 .slides-button {
-    background-image: linear-gradient(to right, rgba(252, 32, 94, 0.84) 0%, rgba(255, 5, 5, 0.84) 51%, #ff1c51 100%);
+    background-image: linear-gradient(to right, rgb(255, 0, 161) 0%, rgba(255, 5, 5, 0.84) 51%, #ff1c51 100%);
     horiz-align:right;
     vertical-align:middle;
 }
