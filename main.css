@@ -14,12 +14,12 @@ body {
     font-size: 20px;
     line-height: 1.5;
     margin: 0 auto;
-    max-width: 73em;
+    max-width: 68em;
     padding: 2em 2em 4em;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Varela Round";
+    font-family: "Varela Round", "Arial", sans-serif;
     color: #222;
     font-weight: 600;
     line-height: 1.3;
