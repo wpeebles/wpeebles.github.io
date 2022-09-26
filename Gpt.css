@@ -89,7 +89,7 @@ body {
     font-family: "Avenir Next",Gelasio,Helvetica,sans-serif;
     font-weight: normal;
     font-size: 1.35vw;
-    width: 49%;
+    width: 45%;
     padding-top: 2.7vw;
     margin-left: auto;
     margin-right: auto;
@@ -375,9 +375,9 @@ hr.rounded {
 
 #overview > .bibtex {
     font-family: "Courier", monospace;
-    font-size: 0.9vw;
+    font-size: 0.75vw;
     color: #FFFFFF;
-    background-color: #2f2f2f;
+    background-color: #414141;
     border: 5px;
     border-color: #2f2f2f;
     border-radius: 10px;
@@ -386,6 +386,7 @@ hr.rounded {
     padding-bottom: 1vw;
     vertical-align: center;
     padding-left: 1vw;
+    padding-right: 1vw;
 }
 
 #overview > .dark_mode {
