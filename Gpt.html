@@ -59,14 +59,15 @@
     <p>
         Over the last decade, the deep learning community has generated a massive amount of neural network checkpoints. They contain
         a wealth of information: diverse parameter configurations and rich metrics such as test losses, classification errors and
-        reinforcement learning returns that describe the quality of the checkpoint. We pre-train a generative model,
-        G.pt, on millions of checkpoints. At test time, we use it to generate parameters for a neural network
+        reinforcement learning returns that describe the quality of the checkpoint. We pre-train a generative model on millions of
+        checkpoints. At test time, we use it to generate parameters for a neural network
         that solves a downstream task.
     </p>
     <video loop autoplay muted playsinline preload="metadata">
         <source src="images/Gpt/website_model.mp4" type="video/mp4">
     </video>
     <p>
+        We refer to our model as G.pt (G and .pt refer to generative models and checkpoint extensions, respectively).
         G.pt is trained as a transformed-based diffusion model of neural network parameters. It takes as input a starting
         (potentially randomly-initialized) parameter vector, the starting loss/error/return and a user's <i>desired</i> loss/error/return.
         Once trained, we can sample a parameter update from the model that matches the user's prompted metric. The backbone of
