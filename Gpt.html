@@ -45,10 +45,11 @@
         <div id="abstract" class="grid-container">
             <p>
                 We explore a data-driven approach for learning to optimize neural networks. We construct a dataset of
-                neural network checkpoints and train a generative model on the parameters. In particular, our model is a
-                conditional diffusion transformer that, given an initial input parameter vector and a prompted loss,
+                neural network checkpoints and train a generative model on the parameters. In particular, our model is
+                a conditional diffusion transformer that, given an initial input parameter vector and a prompted loss,
                 error, or return, predicts the distribution over parameter updates that achieve the desired metric. At
-                test time, it can optimize neural networks with unseen parameters for downstream tasks in just one update.
+                test time, it can optimize neural networks with unseen parameters for downstream tasks in just one
+                update.
             </p>
         </div>
     </div>
@@ -100,7 +101,7 @@
 
     <h1>Training in One Step</h1>
     <p>
-        By prompting it for minimal loss or maximal return, G.pt can optimize unseen parameter vectors in zero-shot fashion.
+        By prompting it for minimal loss or maximal return, G.pt can optimize unseen parameter vectors in one step.
         For example, a Cartpole model with randomly-initialized parameters can be rapidly trained with just one update.
     </p>
     <div class="cartpole">
