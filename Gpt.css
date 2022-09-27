@@ -27,7 +27,7 @@ body {
     background-blend-mode: normal, normal, normal, normal, normal, normal;
     filter: blur(75px);
     -webkit-filter: blur(75px);
-    height: 65vh;
+    height: 75vh;
     width: 100%;
     position: absolute;
     top: 0;
