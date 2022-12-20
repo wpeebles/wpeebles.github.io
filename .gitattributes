@@ -1,1 +1,4 @@
 images/DiT/walks/hq/ filter=lfs diff=lfs merge=lfs -text
+images/DiT/walks/hq/y-walk-DiT-XL-patch2-res512-vae-ft-ema-3002400-cfg-4.0-grid.mp4 filter=lfs diff=lfs merge=lfs -text
+images/DiT/walks/hq/z-walk-DiT-XL-patch2-vae-ft-ema-7005600-cfg-4.0-rng42-grid.mp4 filter=lfs diff=lfs merge=lfs -text
+images/DiT/walks/hq/z-walk-DiT-XL-patch2-res512-vae-ft-ema-3002400-cfg-4.0-rng640-8-grid.mp4 filter=lfs diff=lfs merge=lfs -text
