@@ -542,8 +542,8 @@ hr.rounded {
     .button {
         margin-top: 5vw;
         font-size: 4vw;
-        margin-left: 4vw;
-        margin-right: 4vw;
+        margin-left: 1vw;
+        margin-right: 1vw;
         width: 21vw;
         height: 8vw;
         border-radius: 2vw;
