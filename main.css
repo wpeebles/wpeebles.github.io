@@ -14,7 +14,7 @@ body {
     font-size: 20px;
     line-height: 1.5;
     margin: 0 auto;
-    max-width: 68em;
+    max-width: 63em;
     padding: 2em 2em 4em;
 }
 
@@ -200,7 +200,8 @@ hr {
 @media only screen and (max-width: 1000px) {
 
     html {
-        background: hsl(214, 90%, 65%);
+        background-image: none;
+        background-color: #ffffff;
     }
 
     .paper > img{
@@ -229,5 +230,27 @@ hr {
 
     .gradient-button {
         font-size: 2.3vw;
+    }
+
+    .column-left {
+        width: 100%;
+    }
+
+    .column-left > .me {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .column-right {
+        width: 100%;
+    }
+
+    .row {
+        display: block;
+    }
+
+    h1 {
+        text-align: center;
     }
 }
